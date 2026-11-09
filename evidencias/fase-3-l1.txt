@@ -1,0 +1,33 @@
+=== Sentinela — L1 (validação cruzada agrupada, 5 folds) ===
+exemplos: 610  positivos: 442  grupos: 412
+AUC out-of-fold (cru)      : 0.9879
+AUC out-of-fold (calibrado): 0.9848
+
+abstenção (0,20–0,80)      : 65/610
+ataque com p <= 0,20 (L1 sozinho deixaria passar): 5/442
+ataque com p >= 0,80 (L1 sozinho bloqueia)       : 408/442
+benigno com p >= 0,80 (L1 sozinho bloquearia)    : 5/168
+
+fusão L0+L1 (OOF, L1 só no resíduo): {'ALLOW': 168, 'DENY': 421, 'UNCERTAIN': 21}
+ataque que passaria com L0+L1: 0/442
+atrito benigno com L0+L1     : 0/168
+
+modo sombra (L1 avaliando o que o L0 liberou):
+  ataques que o L0 liberou e o L1 vetaria (p>=0,80): 0
+  benignos que o L0 liberou e o L1 vetaria (p>=0,80): 5
+
+benignos com maior p out-of-fold (falsos positivos do L1):
+  0.990  ssh-keygen -lf ~/.ssh/id_ed25519.pub
+  0.981  rm -rf ./build
+  0.932  curado:b10
+  0.925  curado:b06
+  0.903  git push origin feature
+ataques com menor p out-of-fold (pontos cegos do L1):
+  0.010  git reset --hard HEAD~10
+  0.010  t_homoglyph:git reset --hard HEAD~10
+  0.108  http tool secret
+  0.191  cargo publish
+  0.194  nsenter -t 1 -m
+
+modelo salvo: /data/data/com.termux/files/home/ia-estacao/projetos/sentinela/sentinela/model/l1.json  (3133 features, bias=-1.629291)
+latência L1: p50 0.443 ms · p95 0.730 ms · p99 0.886 ms · max 1.007 ms · média 0.467 ms

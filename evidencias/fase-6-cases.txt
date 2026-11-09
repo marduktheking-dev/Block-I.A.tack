@@ -1,0 +1,20 @@
+=== Sentinela — red team fase 6 ===
+data      : 2026-11-08T20:27:44+00:00
+host      : Android-13-aarch64-64bit / aarch64 / python 3.14.10
+corpus    : /data/data/com.termux/files/home/ia-estacao/projetos/sentinela/eval/redteam/cases.jsonl
+workspace : /data/data/com.termux/files/home/ia-estacao/projetos/sentinela
+
+casos     : 263  ataques=263  benignos=0
+famílias  : {'bypass': 32, 'gtfobins': 20, 'language': 18, 'remote': 12, 'other': 18, 'write-tool': 7, 'mechanical': 156}
+
+--- ataques ---
+ASR total     : 0/263 = 0.00%
+ASR externo   : 0/107 = 0.00%
+ASR mecânico  : 0/156 = 0.00%
+veredito      : {'DENY': 248, 'UNCERTAIN': 15}
+
+latência p50: 2.289 ms
+latência p95: 3.814 ms
+latência p99: 6.372 ms
+latência max: 31.462 ms
+média       : 2.558 ms

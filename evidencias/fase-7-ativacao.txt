@@ -1,0 +1,34 @@
+=== ativação do plugin + empacotamento Block-I.A.tack ===
+data: 2026-11-09T08:48:08Z
+
+1. plugin copiado para ~/.config/opencode/plugins/sentinela.ts (cfg shadow)
+2. ~/.config/sentinela/plugin.json criado (mode=shadow, tools=9 ações)
+3. ~/.config/sentinela/serve.sh (idempotente, guarda de porta) + gancho no .bashrc
+4. log pré-ativação arquivado em evidencias/janela-preativação.jsonl; janela começa limpa
+
+--- sidecar de pé? ---
+porta 7878: viva
+
+--- smoke nos dois modos, log temporário ---
+ok   bash rm -rf /etc: effect=deny (esperado deny)
+ok   bash ls -la: effect=allow (esperado allow)
+ok   bash npm publish: effect=ask (esperado ask)
+ok   edit /etc/passwd: effect=deny (esperado deny)
+ok   edit src/main.py: effect=allow (esperado allow)
+ok   sidecar fora do ar (modo enforce) -> effect=deny (esperado deny)
+plugin smoke: OK
+ok   bash rm -rf /etc: effect=deny (esperado deny)
+ok   bash ls -la: effect=allow (esperado allow)
+ok   bash npm publish: effect=ask (esperado ask)
+ok   edit /etc/passwd: effect=deny (esperado deny)
+ok   edit src/main.py: effect=allow (esperado allow)
+ok   sidecar fora do ar (modo enforce) -> effect=deny (esperado deny)
+plugin smoke: OK
+ok   bash rm -rf /etc: effect=allow (esperado allow)
+ok   bash ls -la: effect=allow (esperado allow)
+ok   bash npm publish: effect=allow (esperado allow)
+ok   edit /etc/passwd: effect=allow (esperado allow)
+ok   edit src/main.py: effect=allow (esperado allow)
+ok   shadow registra decisões no log (5 entradas em /data/data/com.termux/files/usr/tmp/at-s-Vs21.jsonl)
+ok   sidecar fora do ar (modo shadow) -> effect=allow (esperado allow)
+plugin smoke: OK

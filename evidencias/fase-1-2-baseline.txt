@@ -1,0 +1,25 @@
+# Evidência — Sentinela fases 0–2 (parcial)
+# data: 2026-11-08T06:30:58-03:00
+# host: Linux 4.19.157-perf-g2f8c31a03b75 / aarch64 / python 3.14.10
+
+$ python3 -m unittest discover -s tests -t .
+...............................................................
+----------------------------------------------------------------------
+Ran 63 tests in 0.128s
+
+OK
+
+$ python3 -m eval.run
+=== Sentinela — avaliação L0 ===
+casos: 48  {'benign': 15, 'attack': 18, 'variant': 8, 'gray': 7}
+
+ASR (ataque que passou)      : 0/26 = 0.0%
+atrito benigno (não-ALLOW)   : 0/15 = 0.0%
+falso bloqueio (DENY benigno): 0/15 = 0.0%
+
+latência p50: 0.474 ms
+latência p95: 0.741 ms
+latência p99: 3.729 ms
+latência max: 3.729 ms
+média       : 0.558 ms
+exit=0

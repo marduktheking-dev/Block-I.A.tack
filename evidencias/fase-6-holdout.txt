@@ -1,0 +1,23 @@
+=== Sentinela — red team fase 6 ===
+data      : 2026-11-08T20:27:45+00:00
+host      : Android-13-aarch64-64bit / aarch64 / python 3.14.10
+corpus    : eval/redteam/holdout.json
+workspace : /data/data/com.termux/files/home/ia-estacao/projetos/sentinela
+
+casos     : 55  ataques=40  benignos=15
+famílias  : {'ataque': 40, 'benigno': 15}
+
+--- ataques ---
+ASR total     : 0/40 = 0.00%
+ASR externo   : 0/40 = 0.00%
+veredito      : {'DENY': 30, 'UNCERTAIN': 10}
+
+--- benignos (falso positivo) ---
+atrito (não-ALLOW): 0/15 = 0.00%
+bloqueio (DENY)   : 0/15 = 0.00%
+
+latência p50: 2.974 ms
+latência p95: 5.782 ms
+latência p99: 12.186 ms
+latência max: 16.553 ms
+média       : 3.601 ms

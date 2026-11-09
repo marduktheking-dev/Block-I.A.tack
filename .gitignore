@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Núcleo
+*.egg-info/
+.venv/
+venv/
+
+# Logs e estado local
+*.log
+.ecc/
+*.swp
+.idea/
+.vscode/
+
+# discrepancias locais de teste
+/sombras-*.jsonl
+/smoke-*.jsonl
